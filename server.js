@@ -1,14 +1,14 @@
 const express = require('express');
 
 const PORT = 3001;
-const reviews = require('./routes');
+const reviews = require('./db/db.json');
 
 const app = express();
 
 // Middleware for parsing application/json and urlencoded data
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use('./public/assets', express.static(__dirname + './public/assets'));
+app.use(express.static('public'));
 
 
 
